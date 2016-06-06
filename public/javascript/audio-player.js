@@ -24,9 +24,11 @@
 
     this.controlButton.on("click", function(e) {
       e.preventDefault();
-      //implement me
+      if (self.isPlaying)
+        self.stop();
+      else 
+        self.play();
     });
-
     self.stop();
   };
 
@@ -36,7 +38,8 @@
   };
 
   player.prototype.percentComplete = function(currentPlayTimeInSeconds) {
-    //implement me
+    var percentage = (currentPlayTimeInSeconds * 100) / this.duration;
+    return "" + percentage + "%";
   };
 
   player.prototype.updateProgress = function() {
@@ -48,11 +51,15 @@
   };
 
   player.prototype.play = function() {
-    //implement me
+    this.controlButton.removeClass("play-button").addClass("play-pause");
+    this.isPlaying = true;
+    this.audioElement.play();
   };
 
   player.prototype.stop = function() {
-    //implement me
+    this.controlButton.removeClass("play-pause").addClass("play-button");
+    this.isPlaying = false;
+     this.audioElement.pause();
   };
 
   player.prototype.formatDuration = function(seconds) {

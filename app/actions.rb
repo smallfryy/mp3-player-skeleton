@@ -6,5 +6,7 @@ get '/' do
 end
 
 get '/api/v1/music' do
-  #implement me
+  content_type :json
+  song = Song.first
+  song.to_json
 end

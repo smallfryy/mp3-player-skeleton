@@ -14,12 +14,16 @@ body {
   position: relative;
   background: #ffffff;
   border-radius: 10px;
+  margin: auto;
+  width: 25%;
 }
 
 /* Show the album artwork, give it round corners */
 .song__artwork-container {
   height: 250px;
   overflow: hidden;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 /* Make sure the album cover fits inside the container */
@@ -40,23 +44,23 @@ body {
 
 .song__time-start,
 .song__time-end {
+  display: inline-block;
   text-align: center;
   font-size: 12px;
   color: #ffffff;
+  width: 20%;
 }
 
 .song__time-progress-container {
   display: inline-block;
-  float: left;
-  width: 50%;
   padding: 5px;
+  width: 56%;
 }
 
 .song__progress-bar {
   position: relative;
   background: #ffffff;
   height: 4px;
-  width: 100%;
 }
 
 .song__progress-indicator {
